@@ -1,0 +1,17 @@
+name: Duplicate Team Check
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            fetch-depth: 2
+      # - name:
+      #   run: python3 .github/scripts/duplicate_team_check.py 
